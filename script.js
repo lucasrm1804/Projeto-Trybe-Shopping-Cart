@@ -52,14 +52,10 @@ function createProductItemElement({ id: sku, title: name, thumbnail: image }) {
 }
 
 const adiconaProdutos = () => {
-  fetchProducts('computador').then((response) => {
+  fetchProducts('esporte').then((response) => {
     response.results.forEach((produto) => createProductItemElement(produto));
   });
 };
- 
-function getSkuFromProductItem(item) {
-  return item.querySelector('span.item__sku').innerText;
-}
 
 const restoreCartItem = () => {
   const listaDeCompras = getSavedCartItems();
